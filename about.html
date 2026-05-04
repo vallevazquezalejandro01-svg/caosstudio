@@ -1,0 +1,314 @@
+<!doctype html>
+<html>
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Caos Studio</title>
+<link rel="stylesheet" href="styles.css">
+<style>
+
+	/* ── FUENTES ── */
+	@font-face {
+		font-family: 'Neue';
+		src: url('font/neue/NeueHaasDisplayRoman.ttf');
+	}
+
+	/* ── RESET ── */
+	body {
+		margin: 0;
+		background: white;
+	}
+
+	/* ── HEADER ── */
+	.header {
+		display: flex;
+		justify-content: space-between;
+		align-items: center;
+		padding: 0 30px;
+		position: relative;
+		top: 0;
+		left: 0;
+		right: 0;
+		z-index: 10;
+		background: white; /* evita que el scroll tape el header */
+	}
+
+	.logo img {
+		width: 70px;
+	}
+
+	.menu {
+		display: flex;
+	}
+
+	.menu a {
+		padding: 10px;
+		font-size: 20px;
+		font-family: 'Neue', sans-serif;
+		text-decoration: none;
+		color: black;
+	}
+
+	/* ── INTRO (foto + texto) ── */
+	.intro {
+		display: grid;
+		grid-template-columns: 1fr 1fr;
+		gap: 40px;
+		padding: 0 30px;
+		margin-top: 20px; /* espacio bajo el header */ 
+		align-items: flex-end;
+	
+	}
+
+	.intro-foto img {
+		width: 100%;
+		object-fit: cover;
+		display: block;
+		
+	}
+
+	.intro-texto {
+		font-family: 'Neue', sans-serif;
+		font-size: 16px;
+		color: black;
+		
+		max-width: 420px;
+	}
+
+	.titulo {
+		font-size: 50px;
+		color: #e00000;
+		margin: 0 0 20px 0;
+		font-weight: 400;
+		
+	}
+	
+
+	/* ── GRID (formación, puedo hacer, experiencia, trabajo con) ── */
+	.grid {
+		display: grid;
+		grid-template-columns: 1fr 1fr;
+		gap: 40px;
+		padding: 0 30px;
+		margin-top: 50px;
+		margin-bottom: 20px; /* espacio sobre el footer */
+	}
+
+	.seccion-titulo {
+		font-size:  20px;
+		font-family: 'Neue', sans-serif;
+		color: #e00000;
+		font-weight: 400;
+		margin: 0 0 20px 0;
+	}
+
+	.formacion ul,
+	.puedo-hacer ul,
+	.experiencia ul,
+	.trabajo-con ul {
+		font-family: 'Neue', sans-serif;
+		font-size: 16px;
+		color: black;
+		list-style: none;
+		padding-bottom: 20px;
+		margin: 0 0 20px 0;
+		line-height: 1.4;
+		max-width: 300px;
+	}
+	
+	.formacion li,
+	.experiencia li{
+		padding-bottom: 20px
+	}
+
+	/* ── FOOTER ── */
+	.footer {
+		display: flex;
+		justify-content: space-between;
+		align-items: center;
+		padding: 0 30px;
+		position: relative;
+		bottom: 0;
+		left: 0;
+		right: 0;
+		background: white; /* evita que el scroll tape el footer */
+	}
+
+	.footer p {
+		font-family: 'Neue', sans-serif;
+		font-size: /* tamaño */;
+		color: black;
+		margin: 0;
+		line-height: 1.1;
+	}
+
+	.footer a {
+		text-decoration: none;
+		color: grey;
+	}
+
+	.footer .logo img {
+		width: 70px;
+		margin-right: -20px;
+	}
+
+	@media (max-width: 768px) {
+
+    /* INTRO */
+    .intro {
+        grid-template-columns: 1fr;
+        margin-top: 10px;
+        gap: 20px;
+    }
+
+    .intro-foto img {
+        max-height: 70vh;
+        object-fit: cover;
+    }
+
+    .intro-texto {
+        max-width: 100%;
+    }
+
+    .titulo {
+        font-size: 35px;
+    }
+
+    /* GRID */
+    .grid {
+        grid-template-columns: 1fr;
+        gap: 0;
+        margin-top: 30px;
+    }
+
+    /* HEADER */
+    .menu a {
+        font-size: 15px;
+        padding: 5px;
+    }
+
+    .logo img {
+        width: 50px;
+    }
+
+    /* FOOTER */
+    .footer .logo img {
+        width: 50px;
+    }
+
+}
+</style>
+</head>
+<body>
+
+	<div class="header">
+		<div class="logo">
+			<a href="index.html">
+				<img src="img/logo.png" alt="logotipo">
+			</a>
+		</div>
+		<div class="menu">
+			<a href="works.html">Proyectos</a>
+			<a href="about.html">Sobre mi</a>
+			<a href="contact.html">Contacto</a>
+		</div>
+	</div>
+
+	<div class="intro">
+		
+		<div class="intro-foto">
+			<img src="img/foto.jpg" alt="Alejandro Valle Vázquez">
+		</div>
+		
+		<div class="intro-texto">
+			<h1 class="titulo">Caos Studio</h1>
+			
+			<div class="descripcion">
+			<p>Hola,</p>
+				
+			<p>me llamo Alejandro Valle Vázquez. Soy diseñador gráfico con base en Barcelona. Para mí, el diseño es una herramienta de pensamiento: una forma de estructurar ideas y transformarlas en sistemas visuales coherentes y con significado.</p>
+				
+			<p>Trabajando como Caos, desarrollo proyectos con un enfoque estratégico y conceptual, buscando de forma constante la atemporalidad frente a las tendencias pasajeras. Me interesa construir identidades con sustancia, trabajos que no dependan del impacto inmediato, sino de la coherencia y la relevancia a largo plazo.</p>
+			
+			</div>
+		</div>
+	</div>
+
+	<div class="grid">
+
+		<div class="formacion">
+			<h2 class="seccion-titulo">Formación</h2>
+			<ul>
+				<li>FP de Grado Superior en Gráfica Publicitaria <em>(Sep2021/Jun2023)</em>
+				</li>
+				
+				<li>Grado de Diseño Gráfico<br>
+				<em>(Sep2023/Now)</em>
+				</li>
+			</ul>
+		</div>
+
+		<div class="puedo-hacer">
+			<h2 class="seccion-titulo">Puedo hacer</h2>
+			<ul>
+				<li>Identidad Visual</li>
+				<li>Campañas Publicitarias</li>
+				<li>Diseño Editorial</li>
+				<li>Portadas de música</li>
+				<li>Edición de Vídeo</li>
+				<li>Edición Fotográfica</li>
+				<li>Motion Graphics</li>
+				<li>Redes Sociales</li>
+			</ul>
+		</div>
+
+		<div class="experiencia">
+			<h2 class="seccion-titulo">Experiencia</h2>
+			<ul>
+				<li>Alumno de prácticas - Factor Ñ <em>(Abr2023/Jun2023)</em></li>
+				
+				<li>Diseñador Gráfico - Factor Ñ <em>(Jul2023/Sep2023)</em></li>
+				
+				<li>Diseñador Gráfico - Festival La Hamada IV <br> //Freelancer encargado del diseño de las aplicaciones publicitarias (cartel, entrada, merchandising, RRSS...)<br>
+				<em>(Edición 2024)</em> </li>
+				
+				<li>Diseñador Gráfico - Festival La Hamada V<br>//Freelancer encargado del diseño de las aplicaciones publicitarias (cartel, entrada, merchandising, RRSS...)<br>
+				<em>(Edición 2025)</em>
+				</li>
+			</ul>
+		</div>
+
+		<div class="trabajo-con">
+			<h2 class="seccion-titulo">Trabajo con...</h2>
+			<ul>
+				<li>Adobe Illustrator</li>
+				<li>Adobe Photoshop</li>
+				<li>Adobe InDesign</li>
+				<li>Adobe Premiere Pro</li>
+				<li>Adobe After Effects</li>
+				<li>Adobe Lightroom</li>
+				<li>Adobe Dreamweaver</li>
+			</ul>
+			<ul>
+				<li>Figma</li>
+				<li>Procreate</li>
+				<li>Blender</li>
+			</ul>
+		</div>
+
+	</div>
+
+	<div class="footer">
+		<div class="infooter">
+			<p>Caos Studio</p>
+			<p><a href="mailto:vallevazquezalejandro01@gmail.com">vallevazquezalejandro01@gmail.com</a></p>
+		</div>
+		<div class="logo">
+			<a href="index.html">
+				<img src="img/logo.png" alt="logotipo">
+			</a>
+		</div>
+	</div>
+
+</body>
+</html>
