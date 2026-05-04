@@ -1,0 +1,177 @@
+<!doctype html>
+<html>
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Caos Studio</title>
+<link rel="icon" type="image/png" href="img/favicon/favicon-96x96.png" sizes="96x96" />
+<link rel="icon" type="image/svg+xml" href="img/favicon/favicon.svg" />
+<link rel="shortcut icon" href="favicon.ico" />
+<link rel="apple-touch-icon" sizes="180x180" href="img/favicon/apple-touch-icon.png" />
+<meta name="apple-mobile-web-app-title" content="MyWebSite" />
+<link rel="manifest" href="img/favicon/site.webmanifest" />
+	
+<style>
+
+	@font-face {
+		font-family: 'Neue';
+		src: url('font/neue/NeueHaasDisplayRoman.ttf');
+	}
+
+	@font-face {
+		font-family: 'Neue_bold_italic';
+		src: url('font/neue/NeueHaasDisplayRomanItalic.ttf');
+	}
+
+	body {
+		background: white;
+		margin: 0;
+	}
+
+	.container {
+		height: 100vh;
+		width: 100%;
+		overflow: hidden;
+		position: relative;
+	}
+
+	.header {
+		display: flex;
+		justify-content: space-between;
+		align-items: center;
+		position: absolute;
+		top: 0;
+		left: 0;
+		right: 0;
+		z-index: 10;
+		padding: 0 30px;
+	}
+
+	.logo img {
+		width: 70px;
+	}
+
+	.menu {
+		display: flex;
+	}
+
+	.menu a {
+		padding: 10px;
+		font-size: 20px;
+		font-family: 'Neue', sans-serif;
+		text-decoration: none;
+		color: white;
+	}
+
+	.carrousel {
+		position: absolute;
+		top: 0;
+		left: 0;
+		display: flex;
+		flex-direction: row;
+		height: 100vh;
+		will-change: transform;
+	}
+
+	.carrousel a {
+		flex-shrink: 0;
+		display: block;
+		line-height: 0;
+	}
+
+	.carrousel a img {
+		aspect-ratio: 3 / 2;
+		height: 100vh;
+		object-fit: cover;
+		display: block;
+	}
+
+	/* Clase para la foto 1 — aplica tanto al original como al duplicado */
+	.carrousel a.portada img {
+		width: 100vw;
+		aspect-ratio: unset;
+	}
+
+	.claim {
+		position: absolute;
+		top: 50vh;
+		left: 20px;
+		z-index: 10;
+		font-family: 'Neue_bold_italic', serif;
+		font-weight: 400;
+		font-size: 25px;
+	}
+
+	.claim h1 {
+		color: white;
+		margin: 0;
+	}
+	
+	@media (max-width: 600px) {
+		.abajo {
+			flex-direction: column;
+			gap: 10px;
+		}
+	}
+
+</style>
+</head>
+<body>
+
+	<div class="header">
+		<div class="logo">
+			   <a href="index.html">
+        <img src="img/logo_b.png" alt="logotipo">
+    		</a>
+		</div>
+		<div class="menu">
+			<a href="works.html">Proyectos</a>
+			<a href="about.html">Sobre mi</a>
+			<a href="contact.html">Contacto</a>
+		</div>
+	</div>
+
+	<div class="container">
+
+		<div class="claim">
+			<h1>Caminando en un mundo que corre</h1>
+		</div>
+
+		<div class="carrousel" id="carrousel">
+			<a href="#" class="portada"><img src="img/carr/noback.jpg" alt="foto 1"></a>
+			<a href="#"><img src="img/carr/hxh.jpg"    alt="foto 2"></a>
+			<a href="#"><img src="img/carr/sdc.jpg"    alt="foto 3"></a>
+			<a href="#"><img src="img/carr/tv.jpg"     alt="foto 4"></a>
+			<a href="#"><img src="img/carr/tk.jpg"     alt="foto 5"></a>
+			<a href="#"><img src="img/carr/ei.jpg"     alt="foto 6"></a>
+			<a href="#"><img src="img/carr/vhs.jpg"    alt="foto 7"></a>
+		</div>
+
+	</div>
+
+	<div class="footer"></div>
+
+	<script>
+		const track = document.getElementById('carrousel');
+
+		// Duplica el set — la clase .portada se copia también
+		track.innerHTML += track.innerHTML;
+
+		window.addEventListener('load', () => {
+			const mitad = track.scrollWidth / 2;
+			const velocidad = 3;
+			let posicion = 0;
+
+			function animar() {
+				posicion += velocidad;
+				if (posicion >= mitad) posicion = 0;
+				track.style.transform = `translateX(-${posicion}px)`;
+				requestAnimationFrame(animar);
+			}
+
+			requestAnimationFrame(animar);
+		});
+	</script>
+
+</body>
+</html>
